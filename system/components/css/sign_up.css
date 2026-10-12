@@ -1,0 +1,86 @@
+/* Extra styles for sign_up.html (base styles are in style.css) */
+
+/* Fit the whole page inside the screen (no page scroll on desktop) */
+.login {
+  height: 100vh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.panel--signup {
+  min-height: 0;
+  overflow-y: auto; /* fallback only: scrolls inside the panel on very short screens */
+  padding: clamp(20px, 4vh, 60px) 72px clamp(16px, 3vh, 54px);
+}
+
+.panel--signup .form-wrap {
+  padding-bottom: 0;
+}
+
+/* Back link (also defined here so it works even if removed from style.css) */
+.panel--signup .back {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 clamp(14px, 3vh, 36px);
+  font-size: 16.5px;
+  color: var(--muted);
+  transition: color .2s;
+}
+.panel--signup .back svg { width: 19.5px; height: 19.5px; }
+.panel--signup .back:hover { color: var(--accent); }
+
+.panel--signup .eyebrow { margin-bottom: clamp(8px, 1.2vh, 12px); }
+.panel--signup .title {
+  font-size: clamp(34px, 4.8vh, 52.5px);
+  margin-bottom: clamp(8px, 1.4vh, 14px);
+}
+.panel--signup .subtitle { margin-bottom: clamp(14px, 2.8vh, 36px); }
+
+.panel--signup .field { margin-bottom: clamp(10px, 1.9vh, 24px); }
+.panel--signup .field label { margin-bottom: 8px; }
+.panel--signup .field input { height: clamp(38px, 5vh, 57px); }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.grid-2 .field { margin-bottom: 0; }
+
+.hint {
+  font-size: 14.2px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.hint--password { margin: clamp(8px, 1.4vh, 14px) 0 clamp(10px, 1.8vh, 20px); }
+
+.terms { margin-bottom: clamp(12px, 2.2vh, 24px); }
+.terms .check { font-size: 16.5px; align-items: center; }
+.terms .check a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.terms .check a:hover { color: var(--accent); }
+
+.panel--signup .btn { height: clamp(40px, 5vh, 57px); }
+.panel--signup .signup { margin-top: clamp(12px, 2vh, 28px); }
+
+/* Short screens (small laptops): tighten a bit more */
+@media (max-height: 800px) {
+  .panel--signup .subtitle { display: none; }
+  .panel--signup .title { margin-bottom: 14px; }
+  .panel--signup .back { margin-bottom: 14px; }
+}
+
+/* Tablet / phone: stack the panels and allow normal scrolling */
+@media (max-width: 900px) {
+  .login { height: auto; min-height: 100vh; overflow: visible; }
+  .panel--signup { overflow: visible; padding: 28px 24px; }
+  .panel--signup .form-wrap { margin: 24px auto; }
+  .panel--signup .subtitle { display: block; }
+}
+
+@media (max-width: 560px) {
+  .grid-2 { grid-template-columns: 1fr; gap: clamp(10px, 1.9vh, 24px); }
+}
