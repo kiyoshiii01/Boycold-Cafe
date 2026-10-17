@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your order | Boycold Cafe</title>
+  <link rel="icon" href="components/images/boycold_logo.png">
+  <script src="components/js/theme.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="components/css/base.css">
+  <link rel="stylesheet" href="components/css/customer.css">
+  <link rel="stylesheet" href="components/css/checkout.css">
+</head>
+<body>
+
+  <main class="page page--checkout">
+
+    <a href="menu.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Continue browsing
+    </a>
+
+    <section class="co-hero">
+      <div class="co-hero__row">
+        <h1>Your next little pick-me-up.</h1>
+        <span class="pill pill--accent steps">
+          <b>1</b> Cart
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <b>2</b> Pickup
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <b>3</b> Confirmation
+        </span>
+      </div>
+      <p class="co-hero__sub">Review your order and choose a time to swing by.</p>
+    </section>
+
+    <div class="co-layout">
+
+      <!-- LEFT -->
+      <div class="co-main">
+
+        <section class="co-card" id="orderCard"></section>
+
+        <section class="co-card">
+          <div class="co-card__head" style="margin-bottom: calc(14 * var(--u));">
+            <h2 class="co-card__title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              Choose your pickup
+            </h2>
+          </div>
+
+          <div class="grid-2">
+            <div class="f">
+              <label for="pickupDate">Pickup date</label>
+              <div class="f__wrap">
+                <select id="pickupDate"></select>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+              </div>
+            </div>
+            <div class="f" id="timeField">
+              <label for="pickupTime">Preferred pickup time</label>
+              <div class="f__wrap">
+                <select id="pickupTime"></select>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+              </div>
+              <p class="err" id="timeError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="slots" id="slots"></div>
+          <p class="hint">Available times are shown by the cafe. We&rsquo;ll notify you when your order is ready.</p>
+        </section>
+
+        <section class="co-card">
+          <div class="co-card__head" style="margin-bottom: calc(14 * var(--u));">
+            <h2 class="co-card__title">Contact &amp; order note</h2>
+          </div>
+
+          <div class="grid-2">
+            <div class="f" id="nameField">
+              <label for="pickupName">Pickup name</label>
+              <input type="text" id="pickupName" placeholder="Who should we call out?" autocomplete="name">
+              <p class="err" id="nameError" role="alert"></p>
+            </div>
+            <div class="f" id="phoneField">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" placeholder="09XX XXX XXXX" autocomplete="tel">
+              <p class="err" id="phoneError" role="alert"></p>
+            </div>
+          </div>
+
+          <div class="f" style="margin-bottom: 0;">
+            <label for="note">Order note (optional)</label>
+            <input type="text" id="note" placeholder="Anything we should know?" maxlength="120">
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT -->
+      <aside>
+        <div class="sum-card" id="summary"></div>
+
+        <p class="side-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Pickup only at Boycold Cafe. No delivery or online payment.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <script src="components/js/icons.js"></script>
+  <script src="components/js/store.js"></script>
+  <script src="components/js/shell.js"></script>
+  <script src="components/js/checkout.js"></script>
+</body>
+</html>
